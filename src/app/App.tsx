@@ -1,10 +1,10 @@
-import React, {Suspense, useContext, useState} from 'react';
+import React, {Suspense} from 'react';
 import {Link, Route, Routes } from 'react-router-dom';
-import {AboutPageAsync} from "./components/AboutPage/AboutPage.async";
-import MainPage from "./components/MainPage/MainPage";
+import { MainPage } from "pages/MainPage";
 import "./styles/index.scss"
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames/classNames";
+import {useTheme} from "app/providers/ThemeProvider";
+import {classNames} from "shared/lib/classNames/classNames";
+import {AboutPage} from "pages/AboutPage";
 
 export enum Theme {
     LIGHT = "normal",
@@ -22,7 +22,7 @@ const App = () => {
             <button onClick={toggleTheme} className={classNames("btn", {disabled: true})}>Toggle Theme</button>
             <Suspense fallback={"Loading..."}>
                 <Routes>
-                    <Route path={"/about"} element={<AboutPageAsync />} />
+                    <Route path={"/about"} element={<AboutPage />} />
                     <Route path={"/"} element={<MainPage />} />
                 </Routes>
             </Suspense>
