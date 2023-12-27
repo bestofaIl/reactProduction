@@ -12,7 +12,7 @@ function App() {
 
     return (
         <div className={classNames("app", {}, [theme])}>
-            <Suspense fallback={<Loader /}>
+            <Suspense fallback={<Loader />}>
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
