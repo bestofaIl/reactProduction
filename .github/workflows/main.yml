@@ -32,7 +32,7 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
       - name: Upload screenshots
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-snapshots
